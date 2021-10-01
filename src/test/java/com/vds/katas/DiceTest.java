@@ -29,7 +29,7 @@ public class DiceTest {
 //    }
 
     @Test
-    public void returns_1_when_dice_is_rolled(){
+    public void throws_1_when_dice_is_rolled(){
         dice = new Dice(random);
         when(random.ints(1,7)).thenReturn(IntStream.of(1));
 
@@ -39,7 +39,7 @@ public class DiceTest {
     }
 
     @Test
-    public void returns_6_when_dice_is_rolled(){
+    public void throws_6_when_dice_is_rolled(){
         dice = new Dice(random);
         when(random.ints(1,7)).thenReturn(IntStream.of(6));
 
@@ -49,7 +49,7 @@ public class DiceTest {
     }
 
     @Test
-    public void returns_value_between_1_and_6_when_dice_is_rolled(){
+    public void throws_value_between_1_and_6_when_dice_is_rolled(){
         Random random = new Random();
         dice = new Dice(random);
 
