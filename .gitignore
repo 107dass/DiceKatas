@@ -1,0 +1,16 @@
+### Build Output Directories (Combined) ###
+build/
+bin/
+classes/
+out/
+target/
+log/
+.idea
+.gradle
+*.iml
+credentials.yml
+deployment/deployableJar
+.project
+.classpath
+.settings
+.DS_Store
