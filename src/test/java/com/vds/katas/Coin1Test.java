@@ -27,20 +27,20 @@ public class Coin1Test {
 
     @Test
     public void displayHeadWhenCoinIsTossed(){
-        coin = new Coin1(random);
+        coin = new Coin1();
         when(random.nextInt(2)).thenReturn(0);
 
-        String displayValue = coin.toss();
+        String displayValue = coin.toss(random);
 
         assertEquals("Head", displayValue);
     }
 
     @Test
     public void displayTailWhenCoin1IsTossed(){
-        coin = new Coin1(random);
+        coin = new Coin1();
         when(random.nextInt(2)).thenReturn(1);
 
-        String displayValue = coin.toss();
+        String displayValue = coin.toss(random);
 
         assertEquals("Tail", displayValue);
     }
@@ -48,9 +48,9 @@ public class Coin1Test {
     @Test
     @RepeatedTest(10)
     public void displayEitherHeadOrTailWhenCoinIsTossed(){
-        coin = new Coin1(new Random());
+        coin = new Coin1();
 
-        String displayValue = coin.toss();
+        String displayValue = coin.toss(new Random());
         System.out.println(displayValue);
         assertTrue(displayValue.equals("Head") || displayValue.equals("Tail"));
     }

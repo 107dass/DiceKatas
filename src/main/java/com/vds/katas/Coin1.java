@@ -7,13 +7,10 @@ public class Coin1 {
     public static final String HEAD = "Head";
     public static final String TAIL = "Tail";
 
-    private final Random random;
-
-    public Coin1(Random random) {
-        this.random = random;
+    public Coin1() {
     }
 
-    public String toss() {
+    public String toss(Random random) {
         return (random.nextInt(2) == 0) ? HEAD : TAIL;
     }
 }
