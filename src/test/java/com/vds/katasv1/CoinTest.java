@@ -1,4 +1,4 @@
-package com.vds.katas;
+package com.vds.katasv1;
 
 
 import org.junit.jupiter.api.RepeatedTest;
@@ -16,18 +16,18 @@ import static org.mockito.Mockito.when;
 
 //Write a toss() function that returns "head" or "tail" as strings.
 @ExtendWith(MockitoExtension.class)
-public class Coin1Test {
+public class CoinTest {
 
     @InjectMocks
-    private Coin1 coin;
+    private Coin coin;
 
     @Mock
     private Random random;
 
     @Test
     public void displayHeadWhenCoinIsTossed(){
-        coin = new Coin1();
-        when(random.nextInt(2)).thenReturn(0);
+        coin = new Coin();
+        when(random.nextInt(1)).thenReturn(1);
 
         String displayValue = coin.toss(random);
 
@@ -35,9 +35,9 @@ public class Coin1Test {
     }
 
     @Test
-    public void displayTailWhenCoin1IsTossed(){
-        coin = new Coin1();
-        when(random.nextInt(2)).thenReturn(1);
+    public void displayTailWhenCoinIsTossed(){
+        coin = new Coin();
+        when(random.nextInt(1)).thenReturn(0);
 
         String displayValue = coin.toss(random);
 
@@ -47,9 +47,11 @@ public class Coin1Test {
     @Test
     @RepeatedTest(10)
     public void displayEitherHeadOrTailWhenCoinIsTossed(){
-        coin = new Coin1();
+        coin = new Coin();
+        Random random = new Random();
 
-        String displayValue = coin.toss(new Random());
+        String displayValue = coin.toss(random);
+
         System.out.println(displayValue);
         assertTrue(displayValue.equals("Head") || displayValue.equals("Tail"));
     }
